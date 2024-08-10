@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function getval(){
+            let name=document.form1.name.value;
+            let city=document.form1.city.value
+            let state=document.form1.state.value
+            let mobile=document.form1.mobile.value
+            let email=document.form1.email.value
+
+            alert("Name is:"+ name + "\nCity is:"+ city + "\nState" + state +"\nMobile"+mobile+"\nEmail"+ email );
+        }
+    </script>
+</head>
+<body bgcolor="red">
+   
+
+   <form name="form1">
+    Enter Name: <input type="text" name="name"> <br>
+    Enter City: <input type="text" name="city"> <br>
+    Enter State: <input type="text" name="state"> <br>
+    Enter Mobile: <input type="text" name="mobile"> <br>
+    Enter Email: <input type="text" name="email"> <br>
+
+
+
+    <button onclick="getval()">Click Here</button>
+   </form>
+</body>
+</html>
