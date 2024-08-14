@@ -7,9 +7,10 @@
 </head>
 <body>
 
-    <button onclick="display()">Click Me</button>
-    <h1 id="text">Hello Friends</h1>
-
+    <button onclick="display('UIT-RGPV BHOPAL')">Click Me</button>
+    <h1 id="demo">Hi, I am Abhay Dixit</h1>
+    <!-- <button onclick="myname('Abhay','Dixit','Bhopal')">Click Me</button> -->
+    
 
 
     <script>
@@ -21,10 +22,45 @@
             //body of the function
         }*/
 
-        function display(){
+        /*function display(){
             document.getElementById("text").innerHTML="I am Abhay Dixit";
+        }*/
+        /*Parameterized Function: java script function also has parameter , parameters are the argument pass inside the function paranthesis
+
+        syntax: 
+        function functionname(arg1,arg2,....){
+            // body of the function
         }
+        function myname(fnm,snm,city){
+            alert("I am "+fnm+" "+snm+" from "+city);
+        }*/
+
+        /*return type function: javascript functions also return a value to return a value by function we can use return keyword.
+        syntax:
+        function functionname(Arg1,arg2,...){
+            //body of the function
+
+
+            return value;
+        }*/
+
+       /* function display(cnm){
+            mycollege=function(cnm){
+                return "My college name is "+cnm+" !";
+            }
+            document.getElementById("demo").innerHTML=mycollege(cnm);
+        }*/
+
+        <!-- Arrow Function:-   -->
+
+        
+       function display(cnm){
+           const mycollege=(cnm)=>"My college name is "+cnm+" !";
+            document.getElementById("demo").innerHTML=mycollege(cnm);
+        }
+        
     </script>
+
     
 </body>
 </html>
