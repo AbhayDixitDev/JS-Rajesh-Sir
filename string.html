@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="demo">Welcome</h1>
+    <h1 id="demo1">Welcome</h1>
+
+    
+    <script>
+        let s11="i'm abhay dixit";     // single quotes in double quote
+        console.log(s11);
+        let s22='Abhay dixit';
+        let s2l=s22.length;   //length property
+        console.log(s22,s2l);
+  
+        let a="Welcome 'to' \"bhopal\" Cybrom";   //    "\ " is a escape character
+        console.log(a);
+        document.getElementById('demo').innerHTML=a;
+
+        let b=' we "are" web \'developer\' from \\ BHopal';
+         console.log(b);
+         document.getElementById('demo1').innerHTML=b;
+
+         let str="We are cybrom students from Bhopal";
+         let ans=str.slice(0,13);   // slice method start and end value start from 0 
+         document.getElementById('demo').innerHTML=str;
+         document.getElementById('demo1').innerHTML=ans;
+
+         let str1="We are cybrom students from Bhopal";
+         let ans1=str1.substring(7,13);   // substring method same as slice start and end value start from 7 end 13
+         document.getElementById('demo').innerHTML=str1;
+         document.getElementById('demo1').innerHTML=ans1;
+
+
+         let str2="We are cybrom students from Bhopal";
+         let ans2=str2.substr(7,15);   // substr method start and length value start from 7  and till 15 more character
+         document.getElementById('demo').innerHTML=str2;
+         document.getElementById('demo1').innerHTML=ans2;
+
+
+         let s1="we are bansal students from bhopal";
+         let s2=s1.replace("bansal","cybrom");    // gives new string as output and we have to give two values for it first from string second you want to change
+         document.getElementById("demo").innerHTML=s1;
+         document.getElementById("demo1").innerHTML=s2;
+
+
+
+         
+
+
+        
+    </script>
+</body>
+</html>
