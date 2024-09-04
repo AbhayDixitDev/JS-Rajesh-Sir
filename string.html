@@ -71,11 +71,27 @@
          //converting string into array
 
          let splitstring=string12.split("");
-         console.log(splitstring);
+         //console.log(splitstring);
 
          
          let splitstring1=string12.split(" ");
-         console.log(splitstring1);
+         //console.log(splitstring1);
+
+
+         //includes is used to find within string
+
+         let strforincludes=`hi, i'm from "sagar"`;
+         let strforincludesResult=strforincludes.includes("sagar");
+         //console.log(strforincludes);
+         //console.log(strforincludesResult);
+
+         //back tick supports multiline strings 
+         let name="Abhay dixit";
+         let salary=5768464;
+         let newstring =`hello i am ${name} this year tax: ${(salary*0.00005).toFixed(2)} `;
+
+         console.log(newstring);
+
 
 
     </script>
