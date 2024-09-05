@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>array E Ka, E to Array Wa</h1>
+
+    <label>Day:</label>
+    <select id="day">
+      <option value="">Select day</option>
+      <script>
+        for (let i = 1; i <= 31; i++) {
+          document.write("<option>" + i + "</option>");
+        }
+      </script>
+    </select>
+
+    <label>Month:</label>
+    <select id="month">
+      <option value="">Select month</option>
+      <script>
+        const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+        for (let i = 0; i < 12; i++) {
+          document.write("<option>" + monthNames[i] + "</option>");
+        }
+      </script>
+    </select>
+
+    <label>Year:</label>
+    <select id="year">
+      <option value="">Select year</option>
+      <script>
+        for (let i =2024; i >= 1980; i--) {
+          document.write("<option>" + i + "</option>");
+        }
+      </script>
+
+<script>
+    let array=["Abhay","Lokesh","Gourav","Swati",25];
+    console.log(array[3]);
+    document.write(array[0]);
+    console.log(array[4]*4);
+    array[0]="Shivam";
+    console.log(array);
+    array[4]=array[4]*4;
+    console.log(array);    
+    let arrLength=array.length;
+    console.log(arrLength);
+    
+    let mynm=array.join("*");
+    document.write(mynm);
+    console.log(typeof(array));
+    console.log(mynm);
+
+</script>
+</body>
+
+</html>
