@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Pop Method</title>
+</head>
+<body>
+    <h1>Array Methods</h1>
+    <script>
+        let flowers=["rose","lotus","merigold","water lily"];
+        let popitem=flowers.pop();  //return pop item value
+        console.log(popitem);
+        console.log(flowers);
+        let pushitem=flowers.push("Tiger Lily");  //return length of array
+        console.log(pushitem);  
+        console.log(flowers);
+        let shiftitem=flowers.shift();  //shift pops first item of array
+        console.log(shiftitem);
+        console.log(flowers);
+        let unshiftitem=flowers.unshift("Rose");// return length of array
+        console.log(unshiftitem);
+        console.log(flowers);
+        let spliceitem=flowers.splice(2,0,"Jasmine","Water Lily") //adds items in array we can replace item by using number in second paramete
+        console.log(spliceitem);
+        console.log(flowers);
+        let splicearray=flowers.slice(3);  //return array from given index number
+        console.log(splicearray);
+        console.log(flowers);
+        let splicearray1=flowers.slice(2,4);  //total elements we can slice 4 we are starting slicing from index 2
+        console.log(splicearray1);
+        console.log(flowers);
+
+    </script>
+</body>
+</html>
