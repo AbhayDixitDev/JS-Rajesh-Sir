@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JavaScript Loops</h1>
+
+    <script>
+        //simple for loop
+        document.write("<h1>for loop</h1>")
+
+       for(let i=1;i<11;i++){
+            document.write(i);
+        }
+
+        //for in loop
+        document.write("<h1>for in loop</h1>")
+
+        const student={
+            "rollno":"01",
+            "name":"Abhay",
+            "class": "javascript",
+            "city": "bhopal" 
+
+        }
+        for( var i in student){
+          document.write(i," :",student[i],"<br>")
+        }
+
+        // for of loop
+        document.write("<h1>for of loop</h1>")
+
+
+        const names=["Abhay","Lokesh","Gourav","Pallavi"];
+        const strings="I am Abhay Dixit"
+        for (var i of strings){
+            document.write(i,"<br>")
+        }
+
+        //while loop
+
+        var i=1;
+        document.write("<h1>while loop</h1>")
+        while(i<11){
+            document.write(i,"<br>");
+            i++;
+        }
+
+         //do while loop
+
+         var i=1;
+         document.write("<h1>do while loop</h1>")
+        do{
+             <!-- document.write(i,"<br>"); -->
+             i++;
+         }while(i>=10);
+
+   // program to print table of user given number using while
+         let num=prompt();
+         var i=1;
+         while(i<11){
+            document.write("<h1>",num," x ",i,"=",num*i,"</h1>");
+            i++;
+         }
+
+
+    </script>
+</body>
+</html>
