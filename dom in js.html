@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM In JS</title>
+</head>
+<body bgcolor="red">
+    <h1 id="demo">DOM in JS</h1>
+ <button onclick="display()">Click Here</button>
+<br>
+<br>
+<br>
+<br>
+
+ City:<input type="text" value="Sagar" id="City">
+ <button onclick="attributeChange()">Click to change city</button>
+
+
+ <button onclick="bgchange()">Click to change background color</button>
+
+
+ <img src="https://platinumlist.net/guide/wp-content/uploads/2023/03/IMG-worlds-of-adventure.webp" width="400px" alt="" id="img">
+ <button onclick="changeImage()">Change Image</button>
+
+
+    <script>
+    function display(){
+        document.getElementById("demo").innerHTML="DOM in JavaScript (Document object model)";
+    }
+
+    function attributeChange(){
+        document.getElementById("City").value="Pune";
+    }
+
+    function bgchange(){
+        document.body.bgColor="green";
+    }
+
+    function changeImage(){
+        document.getElementById("img").src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaHlgkvSBjLFpLP282EpgmO5qRqRcsCiM_rQ&s";
+    }
+    </script>
+</body>
+</html>
