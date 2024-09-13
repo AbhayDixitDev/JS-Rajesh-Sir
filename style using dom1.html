@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="styleChange()">Click to change style</button>
+
+    <p id="para1">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium esse assumenda eos quidem magnam, deserunt magni, inventore harum ducimus odit incidunt est nobis corrupti laboriosam? Provident, molestiae accusamus unde recusandae voluptatum iure numquam corporis exercitationem fugit beatae ab ratione, ipsa adipisci facere. Voluptates odit doloremque, explicabo fuga similique nam tempore.
+    </p>
+    <button onclick="circleStyle()">click here</button>
+
+    <div id="circle">
+       <p> We are students of cybrom</p>
+    </div>
+    <button onclick="new1()">click here</button>
+    <div id="style">We are web developer</div>
+
+
+    <input type="text" value="welcome" id="input1" >
+    <button onclick="input()">Click here</button>
+
+    <script>
+
+        function input(){
+        let input=document.getElementById("input1");
+        input.style.backgroundColor="yellow";
+        input.style.color="red";
+        input.style.border="2px solid green";
+        input.style.borderRadius="10px";
+        input.style.fontSize="24px";
+        input.style.fontWeight="600";
+        input.style.boxShadow="0px 10px 20px 2px";
+        <!-- input.ariaPlaceholder.backgroundColor="black"; -->
+        input.style.padding="40px";
+        }
+
+        function new1(){
+            let data=document.getElementById("style");
+            data.innerHTML="Welcome to Cybrom";
+            data.style.color="green";
+            data.style.backgroundColor="yellow";
+            data.style.border="4px solid red";
+            data.style.borderRadius="20px";
+            data.style.padding="40px";
+            data.style.fontSize="34px";
+            data.style.fontWeight="600"
+            data.style.width="300px";
+            data.style.height="60px";
+        }
+        function styleChange(){
+            document.getElementById("para1").style.color="white";
+            document.getElementById("para1").style.fontSize="32px";
+            document.getElementById("para1").style.width="500px";
+            document.getElementById("para1").style.border="1px solid red";
+            document.getElementById("para1").style.backgroundColor="brown";
+        }
+
+        function circleStyle(){
+            let circle=document.getElementById("circle");
+            circle.style.backgroundColor="skyblue";
+            circle.style.color="blue";
+            circle.style.textAlign="center";
+            circle.style.padding="50px"
+            circle.style.fontSize="40px";        
+            circle.style.width="200px";
+            circle.style.height="200px";
+            circle.style.borderRadius="50%";
+            circle.style.border="2px solid orange";
+
+        }
+    </script>
+</body>
+</html>
