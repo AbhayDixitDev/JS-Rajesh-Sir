@@ -1,56 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Create Element using JS</title>
     <style>
-        #demo{
-            width: 350px;
-            padding: 40px;
-            border: 1px solid black;
-            background-color: #fff;
-        }
+      #demo {
+        width: 350px;
+        padding: 40px;
+        border: 1px solid black;
+        background-color: #fff;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <!-- <button onclick="createButton()">Click Here</button> -->
-     <button onclick="newData()">Add More</button>
-     <div id="demo">
-        <p id="para0">Enter Subject:<input type="text"> <button onclick="removeDemo('para0')">X</button> </p>
-     </div>
+    <button onclick="newData()">Add More</button>
+    <div id="demo">
+      <p id="para1"> Enter Subject:<input type="text" value="para1"/> <button onclick="removeDemo('para1')">X</button> </p>
+    </div>
 
     <script>
-        document.body.bgColor="red";
-        function createButton(){
-            let newBtn=document.createElement("button");
-            newBtn.innerHTML="Save!";
-            document.body.appendChild(newBtn);
+      document.body.bgColor = "red";
+      function createButton() {
+        let newBtn = document.createElement("button");
+        newBtn.innerHTML = "Save!";
+        document.body.appendChild(newBtn);
+      }
+      let n = 2;
+
+      function newData() {
+        if (n <= 5) {
+          let newObj = document.createElement("p");
+          newObj.id = `para${n}`;
+          let id = newObj.id;
+          newObj.innerHTML = `Enter Subject:<input type="text" value="${id}"> <button onclick="removeDemo('${id}')">X</button>`;
+          document.getElementById("demo").appendChild(newObj);
+          n++;
+        } else {
+          alert("You can only add 5 Subjects!");
         }
-        let n=1;
+      }
 
-        function newData(){
-            /*let newObj=document.createElement("h1"); 
-            newObj.innerText="Welcome to Cybrom!"; 
-            document.getElementById("demo").appendChild(newObj); */
-            let newObj=document.createElement("p");
-            newObj.id=`para${n}`;
-            let id=newObj.id; 
-            ++n;
-            
-            newObj.innerHTML=`Enter Subject:<input type="text"> <button onclick="removeDemo('${id}')">X</button> `;
-           
-            document.getElementById("demo").appendChild(newObj);
-
-
-            
-        }
-
-        function removeDemo(arg){
-            let item=document.getElementById(arg);
-            item.remove();
-            alert("paragraph with id "+arg+" is deleted");
-        }
+      function removeDemo(arg) {
+        n=arg;
+        let item = document.getElementById(arg);
+        item.remove();
+        alert(`Paragraph with id ${arg} is deleted`);
+        let deletedId = parseInt(arg.replace("para", ""));
+        
+      }
     </script>
-</body>
+  </body>
 </html>

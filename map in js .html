@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Map In Js</title>
+  </head>
+  <body>
+    <div id="demo"></div>
+    <script>
+      /*const city=["Bhopal","Sagar","Gwalior","Mathura"];
+      const ans=city.map((key)=>{
+            return "<h1>"+key+"</h1>";
+      })
+
+      data="<ol>";
+        city.map(function(key){
+            data+="<li>"+key+"</li>";
+        })
+        data+="</ol>"
+
+      document.getElementById("demo").innerHTML=ans;
+      document.getElementById("demo").innerHTML=data;*/
+
+      const student=[
+      {
+        "rollno":120,
+        "name":"Abhay Dixit",
+        "city":"Bhopal"
+      },
+      {
+        "rollno":121,
+        "name":"Lokesh",
+        "city":"Mathura"
+      },
+      {
+        "rollno":122,
+        "name":"Gourav",
+        "city":"Seoni"
+      },
+      {
+        "rollno":123,
+        "name":"Tara Chand",
+        "city":"Vrindavan"
+      },
+      {
+        "rollno":124,
+        "name":"Shivansh Tripathi",
+        "city":"NarmadaPuram"
+      },
+      {
+        "rollno":125,
+        "name":"Gagan Jha",
+        "city":"Lalitpur"
+      }
+      ]
+
+      let Table=`<table style="background-color:red;color:white;font-size:32px;" border="1px"><tr style="padding:40px;"><td>Student Rollno</td><td>Student Name</td><td>Student City</td></tr>`;
+        student.map((key)=>{
+            Table+=`<tr><td>${key.rollno}</td><td>${key.name}</td><td>${key.city}</td></tr>`;
+        });
+        Table+="</table>";
+        document.getElementById("demo").innerHTML=Table;
+
+    </script>
+  </body>
+</html>
