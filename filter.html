@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filter methos in js</title>
+</head>
+<body>
+
+    <h1>Filter in JavaScript</h1>
+    <script>
+        const age=[34,54,54,21,58,68,78,25,39,15,11];
+     /*  const ans=age.filter(function(key){
+            if(key%2==0){
+                return true;
+            }
+        })
+
+       const ans=age.filter((key)=>{
+            if(key%2==0){
+                return true;
+            }
+        })
+
+        const ans=age.filter(key=>key%2==0)
+        console.log(age);
+        console.log(ans);*/
+
+        const city=["bhopal","indore","satna","jabalpur","rewa","ujjain","gwalior"];
+        const ans=city.filter(key=>(key==="bhopal" || key==="ujjain"))
+        console.log(city);
+        console.log(ans);
+
+
+    </script>
+</body>
+</html>
