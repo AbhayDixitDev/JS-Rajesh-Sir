@@ -9,8 +9,21 @@
 
 
     <script>
+        const todayDate=Date.now();
+        const birthDay=new Date("2000-06-25");
+        const myMiliSecond=todayDate-birthDay;
+        const howManyDays=myMiliSecond/(1000*60*60*24);
+        document.write("<h1>",howManyDays,"</h1>");
         const date=new Date();
         document.write("<h1>",date,"</h1>");
+        const year=date.getFullYear();
+        document.write("<h1>",year,"</h1>");
+
+        const month=["January","February","March","April","May","June","July","August","September","October","November","December"];
+        const m=date.getMonth();
+        document.write("<h1>",month[m],"</h1>");
+
+
     </script>
     
 </body>
