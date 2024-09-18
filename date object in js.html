@@ -13,17 +13,34 @@
         const birthDay=new Date("2000-06-25");
         const myMiliSecond=todayDate-birthDay;
         const howManyDays=myMiliSecond/(1000*60*60*24);
-        document.write("<h1>",howManyDays,"</h1>");
+        document.write("<h3> How Many Days of Myself in Earth:",howManyDays,"</h3>");
         const date=new Date();
-        document.write("<h1>",date,"</h1>");
-        const year=date.getFullYear();
-        document.write("<h1>",year,"</h1>");
+        document.write("<h1> Current Time & Date:",date,"</h1>");        
 
+
+        const date1=date.getDate();
         const month=["January","February","March","April","May","June","July","August","September","October","November","December"];
         const m=date.getMonth();
-        document.write("<h1>",month[m],"</h1>");
+        const year=date.getFullYear();
+        const day=date.getDay();
+        const arrofDays=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+        const hour=date.getHours();
+        const minute=date.getMinutes();
+        const seconds=date.getSeconds();
+        const miliseconds=date.getMilliseconds();
+        const time=date.getTime();
+      
 
-
+        document.write("<h1> Date:",date1,"</h1>");
+        document.write("<h1> Month:",month[m],"</h1>");       
+        document.write("<h1> Year:",year,"</h1>");     
+        document.write("<h1> Day:",arrofDays[day],"</h1>");   
+        document.write("<h1> Hour:",hour,"</h1>");
+        document.write("<h1> Minute:",minute,"</h1>");
+        document.write("<h1> Seconds:",seconds,"</h1>");
+        document.write("<h1> Millisecond:",miliseconds,"</h1>");
+        document.write("<h1>",time,"</h1>")
+        
     </script>
     
 </body>
