@@ -3,26 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Calculator</title>
+    <style>
+        .calculator {
+            width: 250px;
+            margin: 40px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+          }
+          
+          .button {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+          }
+          
+          .btn {
+            width: 50px;
+            height: 50px;
+            margin: 5px;
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+            font-size: 24px;
+            font-weight: bold;
+            cursor: pointer;
+          }
+          
+          .btn-yellow {
+            background-color: #f7dc6f;
+            color: #333;
+          }
+          
+          .btn-grey {
+            background-color: #eee;
+            color: #333;
+          }
+          
+          .btn-equal {
+            background-color: #4CAF50;
+            color: #fff;
+          }
+          
+          .btn-clear {
+            background-color: #ff9800;
+            color: #fff;
+          }
+          
+          #input-field {
+            width: 90%;
+            height: 30px;
+            padding: 10px;
+            font-size: 24px;
+            font-weight: bold;
+            border-radius: 10px;
+            text-align: right;
+          }
+    </style>
+
 </head>
 <body>
-    <button onclick="back()">back</button>
-    <div id="new">
-        <div id="txtbox">I am Abhay</div>
-    </div>
+    <div class="calculator">
+		<input type="text" id="input-field" readonly>
+		<div class="button">
+			<button type="button" id="btnmul" class="btn btn-yellow" data-num="*" onclick="document.getElementById('input-field').value+=document.getElementById('btnmul').innerHTML">*</button>
+			<button type="button" id="btndiv" class="btn btn-yellow" data-num="/" onclick="document.getElementById('input-field').value+=document.getElementById('btndiv').innerHTML">/</button>
+			<button type="button" id="btnminus" class="btn btn-yellow" data-num="-" onclick="document.getElementById('input-field').value+=document.getElementById('btnminus').innerHTML">-</button>
+			<button type="button" id="btnplus" class="btn btn-yellow" data-num="+" onclick="document.getElementById('input-field').value+=document.getElementById('btnplus').innerHTML">+</button>
+			<button type="button" id="btn9" class="btn btn-grey" data-num="9" onclick="document.getElementById('input-field').value+=document.getElementById('btn9').innerHTML">9</button>
+			<button type="button" id="btn8" class="btn btn-grey" data-num="8" onclick="document.getElementById('input-field').value+=document.getElementById('btn8').innerHTML">8</button>
+			<button type="button" id="btn7" class="btn btn-grey" data-num="7" onclick="document.getElementById('input-field').value+=document.getElementById('btn7').innerHTML">7</button>
+			<button type="button" id="btn6" class="btn btn-grey" data-num="6" onclick="document.getElementById('input-field').value+=document.getElementById('btn6').innerHTML">6</button>
+			<button type="button" id="btn5" class="btn btn-grey" data-num="5" onclick="document.getElementById('input-field').value+=document.getElementById('btn5').innerHTML">5</button>
+			<button type="button" id="btn4" class="btn btn-grey" data-num="4" onclick="document.getElementById('input-field').value+=document.getElementById('btn4').innerHTML">4</button>
+			<button type="button" id="btn3" class="btn btn-grey" data-num="3" onclick="document.getElementById('input-field').value+=document.getElementById('btn3').innerHTML">3</button>
+			<button type="button" id="btn2" class="btn btn-grey" data-num="2" onclick="document.getElementById('input-field').value+=document.getElementById('btn2').innerHTML">2</button>
+			<button type="button" id="btn1" class="btn btn-grey" data-num="1" onclick="document.getElementById('input-field').value+=document.getElementById('btn1').innerHTML">1</button>
+			<button type="button" id="btn0" class="btn btn-grey" data-num="0" onclick="document.getElementById('input-field').value+=document.getElementById('btn0').innerHTML">0</button>
+			<button type="button" id="btnpoint" class="btn btn-grey" data-num="." onclick="document.getElementById('input-field').value+=document.getElementById('btnpoint').innerHTML">.</button>
+			<button type="button" id="btnequal" class="btn btn-equal" onclick="document.getElementById('input-field').value=eval(document.getElementById('input-field').value)">=</button>
+			<button type="button" id="btnclear" class="btn btn-clear" onclick="document.getElementById('input-field').value=''">C</button>
+			<button type="button" id="btnpercent" class="btn btn-grey" data-num="%" onclick="document.getElementById('input-field').value+=document.getElementById('btnpercent').innerHTML">%</button>
+			<button type="button" id="btnsqrt" class="btn btn-grey" data-num="sqrt" onclick="document.getElementById('input-field').value=sqrt(parseInt(document.getElementById('input-field').innerHTML))">√</button>
+			<button type="button" id="btnpower" class="btn btn-grey" data-num="pow" onclick="document.getElementById('input-field').value*=document.getElementById('input-field').value">^2</button>
+			<button type="button" id="btnback" class="btn btn-grey" data-num="back" onclick="back()">X</button>
+		</div>
+	</div>
 
     <script>
        function back(){
-        s=document.getElementById("txtbox").innerHTML;
-        
-
-        document.getElementById("txtbox").innerHTML=s.slice(0,s.length-1);
-        
-        
-       /*const c=document.createElement("div");
-       c.innerHTML=b;
-        document.getElementById("new").appendChild(c);
-       */
+        s=document.getElementById("input-field").value;
+        document.getElementById("input-field").value=s.substring(0,s.length-1);
        }
        
     </script>
