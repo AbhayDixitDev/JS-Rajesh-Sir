@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="back()">back</button>
+    <div id="new">
+        <div id="txtbox">I am Abhay</div>
+    </div>
+
+    <script>
+       function back(){
+        s=document.getElementById("txtbox").innerHTML;
+        
+
+        document.getElementById("txtbox").innerHTML=s.slice(0,s.length-1);
+        
+        
+       /*const c=document.createElement("div");
+       c.innerHTML=b;
+        document.getElementById("new").appendChild(c);
+       */
+       }
+       
+    </script>
+</body>
+</html>
