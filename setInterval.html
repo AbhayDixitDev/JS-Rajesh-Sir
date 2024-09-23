@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set Interval</title>
+</head>
+<body>
+    <div id="div1" style="width: 10px;height:10px;background-color:red"></div>
+    <button onclick="start()">Start</button>
+    <button onclick="stop1()">Stop</button>
+
+    <script>
+       /* function display(){
+            let date=new Date();
+            document.getElementById("msg").innerHTML=date;
+        }
+        var setIntervl=setInterval(display,0.1);
+        let num=0;
+        function stop(){
+           if(num===0){
+            clearInterval(setIntervl);
+            document.getElementById("btn").innerHTML="Start";
+            num=1;
+           }
+           if(num===1){
+           
+           }
+        }*/
+
+        var myint;
+        var mywidth=10;
+        console.log(mywidth);
+        function start1() {
+            document.getElementById("div1").style.width=mywidth+"px";
+            mywidth=mywidth+1;
+        }
+        function start(){
+            myint=setInterval(start1,1);
+        }
+        if(mywidth>=200){
+            clearInterval(myint);
+        }
+        function stop1(){
+            clearInterval(myint);
+        }
+
+
+    </script>
+</body>
+</html>
