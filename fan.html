@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #fan1{
+            display: flex;
+            justify-content: center;
+        }
+        #full{
+            width: 550px;
+            margin-top: 0px;
+        }
+        #fan{
+            width: 450px;
+            position: absolute;
+            top: 0px;
+            left: 525px;
+            transform: rotate(30deg);
+        }
+        #gril{
+            width: 390px;
+            margin-top: 10px;
+            position: absolute;
+            top: 22px;
+            left: 555px;
+        }
+        #stop{
+            background-color: red;
+        }
+        #btns{
+            position: absolute;
+            top: 510px;
+            left: 690px;
+            padding: 2px;
+            display: flex;
+            width:125px;
+        }
+        #btns button{
+            padding: 5px;
+            margin: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div id="fan1">
+        <img src="./full.png" alt=""  id="full">
+        <img src="./fan.png" alt=""  id="fan">
+    <img src="./gril.png" alt="" id="gril">
+    </div>
+    
+    <div id="btns">
+        <button id="superfast">4</button>
+    <button id="fast">3</button>
+    <button id="medium">2</button>
+    <button id="slow">1</button>
+    <button id="stop">0</button>
+    </div>
+
+
+
+
+
+
+    <script>
+        let deg = 30;
+        let interval=setInterval(display,10);
+        let arg = 0;
+
+function display() {
+    document.getElementById("fan").style.transform = `rotate(${deg}deg)`;
+        deg += 50;
+}
+
+document.getElementById("superfast").addEventListener("click", function() {
+    clearInterval(interval);
+    interval = setInterval(display, 10);
+});
+
+document.getElementById("fast").addEventListener("click", function() {
+    clearInterval(interval);
+    interval = setInterval(display, 1);
+});
+
+document.getElementById("medium").addEventListener("click", function() {
+    clearInterval(interval);
+    interval = setInterval(display, 100);
+});
+
+document.getElementById("slow").addEventListener("click", function() {
+    clearInterval(interval);
+    interval = setInterval(display, 150);
+});
+
+document.getElementById("stop").addEventListener("click", function() {
+    clearInterval(interval);
+});
+    </script>
+</body>
+</html>

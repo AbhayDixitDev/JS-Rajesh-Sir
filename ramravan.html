@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+            overflow-y: hidden !important;
+            overflow-x: hidden;
+        }
+        #ram-ravan{
+        
+        width: 99%;
+        background-image: url("./battle.jpg");
+        background-size: cover;
+        height: 98vh;
+        border-radius: 20px 20px 20px 20px;
+        }
+        #ramhd{
+            width: 450px;
+            position: absolute;
+            top: 350px;
+            z-index: 1;
+        }
+        #arrow{
+            width: 420px;
+            position: absolute;
+            z-index: 7;
+            top: 363px;
+            left: 30px;
+        }
+        #ravanbody{
+            width: 1200px;
+            position: absolute;
+            z-index: 5;
+            top: -100px;
+            left: 700px;
+            transform: rotate(0deg);
+        }
+        #ravanhead{
+            width: 1200px;
+            position: absolute;
+            z-index: 5;
+            top: -98px;
+            left: 700px;
+        }
+        #startbtn1{
+            background-color: black;
+            color: white;
+            font-size: 18px;
+            font-weight: 600;
+            width: 100px;
+            padding: 10px;
+            position: absolute;
+            top:650px;
+            left: 650px;
+            border-radius: 10px 10px 10px 10px;
+        }
+    </style>
+</head>
+<body>
+    <embed name="GoodEnough" src="./ramravan.mp3" loop="false" hidden="true" autostart="false">
+  
+
+    <div id="ram-ravan">
+        <img src="./ramhd.png" id="ramhd" alt="">
+        <img src="./arrow.png" id="arrow" alt="">
+        <img src="./ravanbody.png" id="ravanbody" alt="">
+        <img src="./ravanhead.png" id="ravanhead" alt="">
+
+    </div>
+
+    <Button id="startbtn1" onclick="ramhd1()">Scene1</Button>
+
+   
+  
+
+<script>
+    
+    function ramhd1(){
+        let ramhd=350;
+        let arrow=363;
+        function start(){
+            document.getElementById("ramhd").style.top=`${ramhd}px`;
+            document.getElementById("arrow").style.top=`${arrow}px`;
+     
+            if(ramhd<=0){
+             clearInterval(ramhd1)
+             let arrowl=30;
+        let arrowt=0;
+        function start(){
+            document.getElementById("arrow").style.top=`${arrowt}px`;
+            document.getElementById("arrow").style.left=`${arrowl}px`;
+            if(arrowl>=980 ){                
+                clearInterval(ramhd2)
+                 
+                let ravanheadl=700;
+                let ravanbodyd=0;
+                function start(){
+                    document.getElementById("ravanhead").style.left=`${ravanheadl}px`;
+                    document.getElementById("ravanbody").style.transform=`rotate(${ravanbodyd}deg)`
+                    if(ravanbodyd>=90){                
+                        clearInterval(ramhd3)
+
+                            let ramhd=0;
+                            let arrow=0;
+                            let arrowl=980;
+                            function start(){
+                                document.getElementById("ramhd").style.top=`${ramhd}px`;
+                                document.getElementById("arrow").style.top=`${arrow}px`;
+                                document.getElementById("arrow").style.left=`${arrowl}px`;
+
+                         
+                                if(ramhd>=350 || arrow>=363){
+                                 clearInterval(ramhd4);
+                                }
+                                 ramhd+=10;
+                                 arrow+=10.4;
+                                 arrowl-=27;
+                              }
+                              var ramhd4=setInterval(start,100)                        
+                       }
+                       ravanheadl+=20;
+                       ravanbodyd+=5;
+                              
+                 }
+                 var ramhd3=setInterval(start,100)
+
+               }
+            arrowt+=1.92;
+            arrowl+=10;      
+         }
+         var ramhd2=setInterval(start,40)
+            }
+            ramhd-=10;
+            arrow-=10;
+         
+         }
+         var ramhd1=setInterval(start,100)
+        }
+    
+
+        
+    
+    
+ 
+</script>
+</body>
+</html>

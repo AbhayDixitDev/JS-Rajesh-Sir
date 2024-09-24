@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circular Wall Clock</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        
+        #clock {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            border: 10px solid #333;
+            border-radius: 50%;
+            background: white;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .hand {
+            position: absolute;
+            background: #333;
+            transform-origin: bottom center;
+            left: 50%;
+            bottom: 50%;
+            transform: translateX(-50%) rotate(0deg);
+        }
+
+        .hour {
+            width: 8px;
+            height: 70px;
+            background: #000;
+            z-index: 3;
+        }
+
+        .minute {
+            width: 6px;
+            height: 90px;
+            background: #555;
+            z-index: 2;
+        }
+
+        .second {
+            width: 2px;
+            height: 100px;
+            background: red;
+            z-index: 1;
+        }
+
+        .number {
+            position: absolute;
+            font-size: 20px;
+            font-weight: bold;
+            transform: translate(-50%, -50%);
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="clock">
+        <div class="hand hour" id="hourHand"></div>
+        <div class="hand minute" id="minuteHand"></div>
+        <div class="hand second" id="secondHand"></div>
+        
+        <!-- Numbers on the clock -->
+        <div class="number" style="top: 12%; left: 50%;">12</div>
+        <div class="number" style="top: 50%; left: 90%;">3</div>
+        <div class="number" style="top: 50%; left: 10%;">9</div>
+        <div class="number" style="top: 90%; left: 50%;">6</div>
+        <div class="number" style="top: 18%; left: 70%;">1</div>
+        <div class="number" style="top: 18%; left: 30%;">11</div>
+        <div class="number" style="top: 30%; left: 85%;">2</div>
+        <div class="number" style="top: 30%; left: 15%;">10</div>
+        <div class="number" style="top: 85%; left: 25%;">7</div>
+        <div class="number" style="top: 85%; left: 75%;">5</div>
+        <div class="number" style="top: 70%; left: 85%;">4</div>
+        <div class="number" style="top: 70%; left: 15%;">8</div>
+    </div>
+    
+    <button id="startButton">Start Clock</button>
+    <button id="stopButton">Stop Clock</button>
+
+    <script>
+        let intervalId;
+
+        function updateClock() {
+            const now = new Date();
+            const seconds = now.getSeconds();
+            const minutes = now.getMinutes();
+            const hours = now.getHours() % 12; // 12-hour format
+
+            const secondsDegrees = ((seconds / 60) * 360); // Add 90 degrees to start at the top
+            const minutesDegrees = ((minutes / 60) * 360) + ((seconds / 60) * 6);
+            const hoursDegrees = ((hours / 12) * 360) + ((minutes / 60) * 30) ;
+
+            document.getElementById('secondHand').style.transform = `translateX(-50%) rotate(${secondsDegrees}deg)`;
+            document.getElementById('minuteHand').style.transform = `translateX(-50%) rotate(${minutesDegrees}deg)`;
+            document.getElementById('hourHand').style.transform = `translateX(-50%) rotate(${hoursDegrees}deg)`;
+        }
+
+        function startClock() {
+            updateClock(); // Update immediately
+            intervalId = setInterval(updateClock, 1000);
+        }
+
+        function stopClock() {
+            clearInterval(intervalId);
+        }
+
+        document.getElementById('startButton').addEventListener('click', startClock);
+        document.getElementById('stopButton').addEventListener('click', stopClock);
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,150 @@
+.clock {
+    width: 200px;
+    height: 200px;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    position: relative;
+}
+
+.clock-face {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.hour-numbers {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.hour-numbers span {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 1px solid #666;
+    text-align: center;
+    line-height: 20px;
+    margin: 5px;
+}
+
+.hour-numbers span:nth-child(1) {
+    transform: rotate(90deg) translate(80px) rotate(-90deg);
+}
+
+.hour-numbers span:nth-child(2) {
+    transform: rotate(30deg) translate(80px) rotate(-30deg);
+}
+
+.hour-numbers span:nth-child(3) {
+    transform: rotate(60deg) translate(80px) rotate(-60deg);
+}
+
+.hour-numbers span:nth-child(4) {
+    transform: rotate(120deg) translate(80px) rotate(-120deg);
+}
+
+.hour-numbers span:nth-child(5) {
+    transform: rotate(150deg) translate(80px) rotate(-150deg);
+}
+
+.hour-numbers span:nth-child(6) {
+    transform: rotate(180deg) translate(80px) rotate(-180deg);
+}
+
+.hour-numbers span:nth-child(7) {
+    transform: rotate(210deg) translate(80px) rotate(-210deg);
+}
+
+.hour-numbers span:nth-child(8) {
+    transform: rotate(240deg) translate(80px) rotate(-240deg);
+}
+
+.hour-numbers span:nth-child(9) {
+    transform: rotate(270deg) translate(80px) rotate(-270deg);
+}
+
+.hour-numbers span:nth-child(10) {
+    transform: rotate(300deg) translate(80px) rotate(-300deg);
+}
+
+.hour-numbers span:nth-child(11) {
+    transform: rotate(330deg) translate(80px) rotate(-330deg);
+}
+
+.hour-numbers span:nth-child(12) {
+    transform: rotate(360deg) translate(80px) rotate(-360deg);
+}
+
+.hour-hand, .minute-hand, .second-hand {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.hour-hand {
+    width: 50px;
+    height: 5px;
+    background-color: #333;
+    transform-origin: 0% 50%;
+}
+
+.minute-hand {
+    width: 70px;
+    height: 3px;
+    background-color: #666;
+    transform-origin: 0% 50%;
+}
+
+.second-hand {
+    width: 90px;
+    height: 1px;
+    background-color: #999;
+    transform-origin: 0% 50%;
+}
+
+.time-display {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.start-button {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: #fff;
+    cursor: pointer;
+}
+.stop-button {
+    position: absolute;
+    bottom: 10px;
+    left: 20%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: #fff;
+    cursor: pointer;
+}
+
+.start-button:hover, .stop-button:hover {
+    background-color: #3e8e41;
+}

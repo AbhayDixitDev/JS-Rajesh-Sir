@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <!-- <h1 id="demo">hello,</h1>
+    <button onclick="Stop()">stop</button> -->
+    <h1 id="demo">0</h1>
+    <button onclick="Start()">Start</button>
+    <button onclick="Stop()">stop</button>
+
+
+    <Script>
+        let varInt;
+        function Start(){
+            varInt=setTimeout(count,1000);
+            function count(){
+                let num=Number(document.getElementById("demo").innerHTML);
+                num++;
+                document.getElementById("demo").innerHTML=num;
+                setTimeout(count,1000);
+            }
+        }
+        function Stop(){
+             clearTimeout(varInt);
+        }
+
+    </Script>
+</body>
+</html>
