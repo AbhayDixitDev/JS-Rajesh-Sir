@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="demo"></h1>
+
+    <script>
+
+        const a=[1,2,35,7,5];
+        const b=[5,8,9,5,4,58];
+        const c=[...a,...b];   //    "..." is a spread operator
+        //console.log(c)
+        document.getElementById("demo").innerHTML=c;
+
+
+        const array=[25,40,25,85,65];
+        console.log(...array);
+        const [d,e,f,g,h]=array;   //destructing
+        console.log(d)
+        console.log(e)
+        console.log(f)
+        console.log(g)
+        console.log(h)
+
+        const product={"pname":"shoes","pprice":"1250","pbrand":"puma"};
+        const {pname,pprice,pbrand}=product;   //destructing
+        console.log(pname)
+        console.log(pprice)
+        console.log(pbrand)
+
+        const num=[25,15,65,15,85,48];
+        const [a1,a2,a3,...rest]=num;
+        console.log(a1)
+        console.log(a2)
+        console.log(a3)
+        console.log(rest)
+
+        const obj1={
+            "rollno":"121",
+            "name":"Abhay",
+            "city":"Sagar"
+        }
+        const obj2={
+            "course":"MERN",
+            "Skills":"react,js,c++",
+            "experience":"fresher"
+        }
+
+        const spreadObject={...obj1,...obj2}
+        console.log(spreadObject)
+    </script>
+    
+</body>
+</html>
