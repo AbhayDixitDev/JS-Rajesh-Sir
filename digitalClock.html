@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 5px solid rgb(188, 0, 0);
+            width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: black;
+            color: red;
+            font-size: 24px;
+
+        }
+        div h1{
+            width: 40px;
+            border-left: 1px solid rgb(194, 8, 8);
+            color: red;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1 id="hour">0</h1>Hours
+        <h1 id="minute">0</h1>Minutes
+        <h1 id="second">0</h1>Seconds
+    </div>
+    <button onclick="Start()">Start</button>
+    <button onclick="Stop()">Stop</button>
+
+
+
+    <script>
+        let date= new Date;
+        document.getElementById("hour").innerHTML=date.getHours();
+        document.getElementById("minute").innerHTML=date.getMinutes();
+        document.getElementById("second").innerHTML=date.getSeconds();
+
+   
+        let hour=Number(document.getElementById("hour").innerHTML);
+        let minute=Number(document.getElementById("minute").innerHTML);
+        let second=Number(document.getElementById("second").innerHTML);
+        let timeOut;
+
+
+
+        function Start(){
+            second=date.getSeconds();
+           hour=date.getHours();
+           minute=date.getMinutes();
+            timeOut = setTimeout(Clock,1);
+        }
+        function Stop(){
+            clearTimeout(timeOut)
+        }
+        function Clock(){
+            
+            if(second>58){
+                second=0; 
+                minute+=1;
+                document.getElementById("minute").innerHTML=minute;
+                               
+            }
+            if(minute>58){
+                minute=0;
+                hour+=1;
+                document.getElementById("hour").innerHTML=hour;
+               
+            }
+                second++;
+            document.getElementById("second").innerHTML=second;
+            setTimeout(Clock,1000);
+            
+        }
+
+
+
+
+
+    </script>
+</body>
+</html>
