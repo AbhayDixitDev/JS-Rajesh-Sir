@@ -49,13 +49,13 @@
         let second=Number(document.getElementById("second").innerHTML);
         let timeOut;
 
-
+        second=date.getSeconds();
+        hour=date.getHours();
+        minute=date.getMinutes();
+         timeOut = setTimeout(Clock,0);
 
         function Start(){
-            second=date.getSeconds();
-           hour=date.getHours();
-           minute=date.getMinutes();
-            timeOut = setTimeout(Clock,1);
+       
         }
         function Stop(){
             clearTimeout(timeOut)

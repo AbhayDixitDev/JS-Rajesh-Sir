@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>localStorage</title>
+</head>
+<body>
+     First Name: <input type="text" id="fnm">
+     <br>
+     Last Name: <input type="text" id="lnm">
+     <br>
+     <button id="SetData">Set</button>
+     <button id="GetData">Get</button>
+     <button id="ClrData">Clear</button>
+     <br>
+     <h1 id="data"></h1>
+   
+
+    <script>
+        document.getElementById("SetData").addEventListener("click", setData)
+        document.getElementById("GetData").addEventListener("click", getData)
+        document.getElementById("ClrData").addEventListener("click", clrData)
+
+        function setData(){
+           let firstname= document.getElementById("fnm").value;
+           let lastname= document.getElementById("lnm").value;
+           window.localStorage.setItem("firstname",firstname);
+           window.localStorage.setItem("lastname",lastname);
+        }
+        function getData(){
+            let firstname=window.localStorage.getItem("firstname");
+            let lastname=window.localStorage.getItem("lastname");
+            document.getElementById("data").innerHTML="Hello, I am "+firstname+" "+lastname;
+        }
+        function clrData(){
+            window.localStorage.clear();
+        }
+
+    </script>
+    
+</body>
+</html>
