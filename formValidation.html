@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body bgcolor="skyblue">
+    <form name="f1" action="fan.html"  onsubmit="return validate()">
+        Enter Name :<input type="text" name="nm"> <br>
+        Enter City :<input type="text" name="city" > <br>
+        <input type="submit" value="submit">
+    </form>
+
+
+    <script>
+        function validate(){
+            let name=document.f1.nm.value;
+            if(name==""){
+                alert("Name is required");
+                document.f1.nm.focus();
+                return false;
+            }
+            let city=document.f1.city.value;
+            if(city==""){
+                alert("City is required");
+                document.f1.city.focus();
+                return false;
+            }
+            
+        }
+    </script>
+    
+    
+</body>
+</html>
