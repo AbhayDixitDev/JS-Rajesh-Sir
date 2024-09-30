@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Try Catch and Finally</title>
+    <style>
+        #error {
+            color: red;
+        }
+        #result {
+            color: green;
+        }
+        #num1, #num2 {
+            border: 1px solid black;
+            border-radius: 5px;
+            padding: 5px;
+        }
+        button {
+            border: 1px solid black;
+            border-radius: 5px;
+            padding: 5px;
+            background-color: #007bff;
+            color: white;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        button:active {
+            background-color: #004080;
+        }
+        h1 {
+            color: blue;
+        }
+        p {
+            color: black;
+        }
+        body {
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }   
+        input {
+            border: 1px solid black;
+            border-radius: 5px;
+            padding: 5px;
+            margin: 5px;
+        }
+        input:focus {
+            outline: none;
+            border-color: #007bff;
+        }
+        input:focus::placeholder {
+            color: #007bff;
+        }      
+    </style>
+</head>
+<body>
+    <h1>Try Catch and Finally</h1>
+    <p>Try Catch and Finally are used to handle errors in JavaScript.</p>
+    <p>Try is used to test a block of code for errors.</p>
+    <p>Catch is used to handle the error.</p> 
+    <p>Finally is used to execute code after try and catch.</p>
+    <input type="text" name="" id="num1" placeholder="Enter the first number">
+    <input type="text" name="" id="num2" placeholder="Enter the second number">
+    <button onclick="divide()">Divide</button>
+    <p id="result"></p>
+    <p id="error"></p>
+    <script>
+       function divide() {
+        let a = Number(document.getElementById("num1").value);
+        let b = Number(document.getElementById("num2").value);
+        document.getElementById("error").innerHTML = "";
+
+        try {
+            
+            if (b === 0) {
+                throw "Cannot divide by zero";
+            }
+            if (isNaN(a) || isNaN(b)) {
+                throw "Please enter a valid number";
+            }
+            document.getElementById("result").innerHTML = a / b;
+
+        } 
+        catch (error) {
+            document.getElementById("error").innerHTML = error;
+        }
+        finally {
+            document.getElementById("num1").value = a;
+            document.getElementById("num2").value = b;
+            document.getElementById("result").innerHTML = a / b;
+        }
+       }
+    </script>
+</body>
+</html>
