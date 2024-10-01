@@ -1,0 +1,74 @@
+{
+  "students": [
+    {
+      "rollno": 121,
+      "name": "Abhay",
+      "city": "Bhopal",
+      "fees": 40000
+    },
+    {
+      "rollno": 122,
+      "name": "Shivansh",
+      "city": "Narmadapuram",
+      "fees": 50000
+    },
+    {
+      "rollno": 123,
+      "name": "Rajesh",
+      "city": "Mumbai",
+      "fees": 60000
+    },
+    {
+      "rollno": 124,
+      "name": "Naresh",
+      "city": "Sagar",
+      "fees": 50000
+    }
+  ],
+  "teachers": [
+    {
+      "id": 1,
+      "name": "Rajesh",
+      "city": "Satna",
+      "Subject":"MERN"
+    },
+    {
+      "id": 2,
+      "name": "Deepak",
+      "city": "Rewa",
+      "Subject": "MERN"
+    },
+    {
+      "id": 3,
+      "name": "Bhanu",
+      "city": "Bhopal",
+      "Subject": "C++ and Python"
+    }
+  ],
+  "results": [
+    {
+      "id": 1,
+      "name": "Abhay",
+      "city": "Bhopal",
+      "result": "Pass"
+    },
+    {
+      "id": 2,
+      "name": "Shivansh",
+      "city": "Narmadapuram",
+      "result": "Fail"
+    },
+    {
+      "id": 3,
+      "name": "Rajesh",
+      "city": "Mumbai",
+      "result": "Pass"
+    },
+    {
+      "id": 4,
+      "name": "Naresh",
+      "city": "Sagar",
+      "result": "Pass"
+    }
+  ]
+}

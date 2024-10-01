@@ -1,0 +1,4 @@
+write about computer, computer is a device that can be programmed to carry out sequences of arithmetic or logical operations automatically.
+ Modern computers have the ability to follow generalized sets of operations, called programs. These programs enable computers to perform 
+ a wide range of tasks. A "complete computer" includes the computer itself, peripheral devices for input and output, storage devices, 
+ and various other optional hardware components, such as a computer mouse, keyboards, webcams, printers, etc. 
