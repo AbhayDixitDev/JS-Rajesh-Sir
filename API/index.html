@@ -1,19 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>JSON SERVER FETCH API MAKING</title>
-  </head>
-  <body>
-    <h1 id="demo">Data Will be Displayed Here</h1>
-    <button onclick="Display()">Fetch Data</button>
-    <script>
-      function Display() {
-        fetch("abhay.txt")
-          .then((x) => x.text())
-          .then((y) => (document.getElementById("demo").innerHTML = y));
-      }
-    </script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JSON SERVER FETCH API MAKING</title>
+</head>
+
+<body>
+  <button onclick="Display()">Fetch Data</button>
+  <h1 id="demo">Data Will be Displayed Here</h1>
+  <script>
+    async function Display() {
+      let api = "http://localhost:4000/students";
+      let table = `<table border="1px solid black">
+        <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>City</th>
+        </tr>
+        `;
+      let res = await fetch(api);
+      let data = await res.json();
+      console.log(data);
+      data.map((key) => {
+        table += `<tr>
+          <td>${key.name}</td>
+          <td>${key.age}</td>
+          <td>${key.city}</td>
+          </tr>`;
+      });
+      table += `</table>`;
+      document.getElementById("demo").innerHTML = table;
+    }
+  </script>
+</body>
+
 </html>
