@@ -1,19 +1,23 @@
 {
-    "students": [
-        {
-            "name": "Abhay",
-            "age": 20,
-            "city": "New Delhi"
-        },
-        {
-            "name": "Lokesh",
-            "age": 20,
-            "city": "Bhopal"
-        },
-        {
-            "name": "Gagan",
-            "age": 20,
-            "city": "New Delhi"
-        }
-    ]
+  "students": [
+    {
+      "rollno": 1,
+      "name": "Abhay",
+      "city": "New Delhi",
+      "fees": 1000
+    },
+    {
+      "rollno": 2,
+      "name": "Lokesh",
+      "city": "Bhopal",
+      "fees": 2000
+    },
+    {
+      "id": "b56b",
+      "rollno": "12",
+      "name": "Abhay Dixit",
+      "city": "Bhopal",
+      "fees": "45000"
+    }
+  ]
 }

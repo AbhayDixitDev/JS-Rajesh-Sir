@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form >
+        enter rollno: <input type="text" id="rollno" placeholder="enter rollno">
+        enter name: <input type="text" id="name" placeholder="enter name">
+        enter city <input type="text" id="city" placeholder="enter city">
+        enter fees: <input type="text" id="fees" placeholder="enter fees">
+        <button type="submit"  id="btn1">submit</button>
+    </form>
+    <button id="btn2">fetch data</button>
+    <h1 id="demo">data will be displayed here</h1>
+
+    <script>
+        document.getElementById('btn1').addEventListener('click',postdata);
+        document.getElementById('btn2').addEventListener('click',fetchdata);
+        function postdata(){
+            let rollno=document.getElementById('rollno').value;
+            let name=document.getElementById('name').value;
+            let city=document.getElementById('city').value;
+            let fees=document.getElementById('fees').value;
+
+            let api="http://localhost:3000/students";
+            let data={rollno,name,city,fees};
+
+            fetch(api,{
+                method:'POST',
+                headers:{
+                    'Accept':'application/json',
+                    'Content-Type':'application/json'
+                },
+                body:JSON.stringify(data)
+            })
+            .then(res=>res.json())
+            .then(data=>console.log(data));
+        }
+        async function fetchdata(){
+            let api="http://localhost:3000/students";
+            let table=`<table>
+                <tr>
+                    <th>rollno</th>
+                    <th>name</th>
+                    <th>city</th>
+                    <th>fees</th>
+                </tr>
+            `;
+               let myobj=await fetch(api);
+            let data=await myobj.json();
+                data.map(item=>{
+                    table+=`<tr>
+                    <td>${item.rollno}</td>
+                    <td>${item.name}</td>
+                    <td>${item.city}</td>
+                    <td>${item.fees}</td>
+                    </tr>`;
+                });
+                table+=`</table>`;
+            
+
+           
+            document.getElementById('demo').innerHTML=table;
+        }
+    </script>
+</body>
+</html>
